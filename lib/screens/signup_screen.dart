@@ -15,61 +15,68 @@ class SignupScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 150,
-                child: Center(
-                  child: Text(
-                    'JUNKY',
-                    style: TextStyle(color: Colors.green, fontSize: 80.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 150,
+                  child: Center(
+                    child: Text(
+                      'JUNKY',
+                      style: TextStyle(color: Colors.green, fontSize: 80.0),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              buildTextfield(
-                username ?? 'Email',
-                const Icon(Icons.person),
-              ),
-              const SizedBox(
-                height: 16.0,
-              ),
-              buildTextfield(
-                'Password',
-                const Icon(Icons.lock),
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              buildTextfield(
-                'Confirm Password',
-                const Icon(Icons.lock),
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              buildButton(context),
-              const SizedBox(
-                height: 20.0,
-              ),
-              RichText(
-                textAlign: TextAlign.center,
-                text: const TextSpan(
-                  text: "Already have an account? ",
-                  style: TextStyle(color: Colors.grey, fontSize: 20.0),
-                  children: [
-                    TextSpan(
-                      text: "Sign In",
-                      style: TextStyle(color: Colors.green, fontSize: 20.0),
-                    ),
-                  ],
+                const SizedBox(
+                  height: 16.0,
                 ),
-              ),
-            ],
+                buildTextfield('Username', const Icon(Icons.person)),
+                const SizedBox(
+                  height: 16.0,
+                ),
+                buildTextfield(
+                  username ?? 'Email',
+                  const Icon(Icons.email),
+                ),
+                const SizedBox(
+                  height: 16.0,
+                ),
+                buildTextfield(
+                  'Password',
+                  const Icon(Icons.lock),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                buildButton(context),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                GestureDetector(
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: const TextSpan(
+                      text: "Already have an account? ",
+                      style: TextStyle(color: Colors.grey, fontSize: 20.0),
+                      children: [
+                        TextSpan(
+                          text: "Sign In",
+                          style: TextStyle(color: Colors.green, fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignupScreen()));
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

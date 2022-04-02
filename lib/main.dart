@@ -16,11 +16,12 @@ class _JunkyState extends State<Junky> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const SignupScreen(),
+      home: const SplashScreen(),
     );
   }
 }

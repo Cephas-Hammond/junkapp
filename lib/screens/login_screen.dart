@@ -15,65 +15,67 @@ class LoginScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 150,
-                child: Center(
-                  child: Text(
-                    'JUNKY',
-                    style: TextStyle(color: Colors.green, fontSize: 80.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 150,
+                  child: Center(
+                    child: Text(
+                      'JUNKY',
+                      style: TextStyle(color: Colors.green, fontSize: 80.0),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              buildTextfield(
-                username ?? 'Email',
-                const Icon(Icons.person),
-              ),
-              const SizedBox(
-                height: 16.0,
-              ),
-              buildTextfield(
-                'Password',
-                const Icon(Icons.lock),
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              const Text(
-                'Forgot Password?',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  decoration: TextDecoration.underline,
+                const SizedBox(
+                  height: 16,
                 ),
-                textAlign: TextAlign.end,
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
-              buildButton(context),
-              const SizedBox(
-                height: 20.0,
-              ),
-              RichText(
-                textAlign: TextAlign.center,
-                text: const TextSpan(
-                  text: "Don't have an account? ",
-                  style: TextStyle(color: Colors.grey, fontSize: 20.0),
-                  children: [
-                    TextSpan(
-                      text: "Sign Up",
-                      style: TextStyle(color: Colors.green, fontSize: 20.0),
-                    ),
-                  ],
+                buildTextfield(
+                  username ?? 'Email',
+                  const Icon(Icons.person),
                 ),
-              ),
-            ],
+                const SizedBox(
+                  height: 16.0,
+                ),
+                buildTextfield(
+                  'Password',
+                  const Icon(Icons.lock),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                const Text(
+                  'Forgot Password?',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    decoration: TextDecoration.underline,
+                  ),
+                  textAlign: TextAlign.end,
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                buildButton(context),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: const TextSpan(
+                    text: "Don't have an account? ",
+                    style: TextStyle(color: Colors.grey, fontSize: 20.0),
+                    children: [
+                      TextSpan(
+                        text: "Sign Up",
+                        style: TextStyle(color: Colors.green, fontSize: 20.0),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
